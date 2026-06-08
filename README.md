@@ -124,7 +124,30 @@ Use nomes de métodos iniciando com test_.
 * **Aceitos:** Todos os cenários normais e de borda sugeridos foram incorporados utilizando a estrutura `with self.subTest(...)`.
 * **Alterados/Removidos:** (Refatorei todos os testes da função de cálculo de média para usar subtest e o código ficar mais limpo).
 
-### 5. Resultado da Execução no Terminal
+### 5. Código final dos testes
+
+```python
+def test_calcular_media_com_varios_casos(self):
+    """Testa a média aritmética com listas de números variados."""
+    casos = [
+        ([10, 20, 30, 40], 25),
+        ([7.5], 7.5),
+        ([-5, -15, -10], -10),
+        ([1.5, 2.5, 3.5], 2.5),
+        ([-10, 10], 0),
+    ]
+
+    for lista, esperado in casos:
+        with self.subTest(lista=lista):
+            self.assertEqual(calcular_media(lista), esperado)
+
+def test_calcular_media_lista_vazia(self):
+    """Garante que calcular_media lança ValueError ao receber lista vazia."""
+    with self.assertRaises(ValueError):
+        calcular_media([])
+```
+
+### 6. Resultado da Execução no Terminal
 ```bash
 python -m unittest discover
 ```

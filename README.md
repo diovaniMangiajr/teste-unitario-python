@@ -22,14 +22,14 @@ teste-unitario-python/
 Além das operações básicas fornecidas no roteiro inicial (Soma, Subtração, Multiplicação e Divisão), foram desenvolvidos:
 
 * **Função de Potenciação (potencia):** Operação que eleva uma base a um determinado expoente.
-* **Desafio Extra(calcular_meda):** Função que recebe uma lista de números, calcula a média aritmétca e trata o cenário de listas vazias lançando uma exceção.
+* **Desafio Extra (calcular_media):** Função que recebe uma lista de números, calcula a média aritmétca e trata o cenário de listas vazias lançando uma exceção.
 
 ## Como Executar os Testes
 
 1. Abra o terminal na raiz do projeto.
 2. Execute o comando para rodar a suíte de testes específica:
 ```text
-python -m unittest test_calucladora.py
+python -m unittest test_calculadora.py
 ```
 Ou use o descobrimento automático de testes unittest:
 ```text
@@ -113,8 +113,8 @@ Use nomes de métodos iniciando com test_.
 
 | ID  | Cenário                    | Entrada            | Resultado Esperado | Tipo de caso|
 | :-- | :-------------------       | :----------------- | :----------------- | :---------- |
-| T01 | Lista de inteiros positvos | `[10, 20, 30, 40]` | `25`               | normal      |
-| T02 | Lista com elemento únco    | `[7.5]`            | `7.5`              | de borda    |
+| T01 | Lista de inteiros positivos| `[10, 20, 30, 40]` | `25`               | normal      |
+| T02 | Lista com elemento único   | `[7.5]`            | `7.5`              | de borda    |
 | T03 | Lista com números negativos| `[-5, -15, -10]`   | `-10`              | normal      |
 | T04 | Lista vazia                | `[]`               | `ValueError`       | de erro     |
 | T05 | Lista com números decimais | `[1.5, 2.5, 3.5]`  | `2.5`              | normal      |

@@ -44,3 +44,89 @@ Ran 8 tests in 0.001s
 
 OK
 ```
+
+## Uso de IA para Geração de Cenários de Teste (Atividade Prática 2)
+
+### 1. Função Escolhida
+`calcular_media(lista)`
+
+### 2. Prompt Utilizado
+* **Prompt para gerar os cenários.**
+```text
+"Atue como um professor de Teste de Software.
+
+  
+
+Tenho a seguinte função Python:
+
+  
+
+def calcular_media(lista: list) -> float:
+    """Retorna a média de uma lista de números
+    Se a lista vier vazia levanta um ValueError
+    """
+
+    if not lista:
+        raise ValueError("A lista não pode estar vazia.")
+    
+    return sum(lista) / len(lista)"
+
+  
+
+Quero criar testes unitários usando unittest.
+
+  
+
+Liste pelo menos 6 cenários de teste para essa função.
+
+  
+
+Para cada cenário, informe:
+
+- nome do cenário;
+
+- entrada;
+
+- resultado esperado;
+
+- tipo do cenário: caso normal, caso de borda ou caso de erro.
+
+  
+
+Não gere código ainda.
+```
+
+* **Prompt para gerar os códigos dos testes.**
+```text
+
+Agora transforme os cenários aprovados em testes unitários usando Python e unittest.
+
+
+Considere que a função já foi importada no arquivo test_calculadora.py.
+
+
+Gere apenas o método de teste que deve ser colocado dentro da classe TestCalculadora.
+
+Use nomes de métodos iniciando com test_.
+```
+### 3. Tabela de Cenários Planejados/Sugeridos
+
+| ID  | Cenário                    | Entrada            | Resultado Esperado | Tipo de caso|
+| :-- | :-------------------       | :----------------- | :----------------- | :---------- |
+| T01 | Lista de inteiros positvos | `[10, 20, 30, 40]` | `25`               | normal      |
+| T02 | Lista com elemento únco    | `[7.5]`            | `7.5`              | de borda    |
+| T03 | Lista com números negativos| `[-5, -15, -10]`   | `-10`              | normal      |
+| T04 | Lista vazia                | `[]`               | `ValueError`       | de erro     |
+| T05 | Lista com números decimais | `[1.5, 2.5, 3.5]`  | `2.5`              | normal      |
+| T06 | Média resultante em zero   | `[-10, 10]`        | `0.0`              | borda       |
+
+### 4. Análise dos Cenários
+* **Aceitos:** Todos os cenários normais e de borda sugeridos foram incorporados utilizando a estrutura `with self.subTest(...)`.
+* **Alterados/Removidos:** (Refatorei todos os testes da função de cálculo de média para usar subtest e o código ficar mais limpo).
+
+### 5. Resultado da Execução no Terminal
+```bash
+python -m unittest discover
+```
+
+![Print do Terminal](/docs/print_terminal.png)

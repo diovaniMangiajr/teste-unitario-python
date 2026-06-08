@@ -20,3 +20,7 @@ def dividir(a, b):
     Se o segundo número for zero, o Python irá gerar um erro.
     """
     return a / b
+
+def potencia(a: float, b: float) -> float:
+    """Retorna a potência de dos números."""
+    return a**b

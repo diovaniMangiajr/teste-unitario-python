@@ -3,7 +3,7 @@
 
 import unittest
 
-from calculadora import dividir, multiplicar, somar, subtrair
+from calculadora import dividir, multiplicar, somar, subtrair, potencia
 
 
 class TestCalculadora(unittest.TestCase):
@@ -37,6 +37,12 @@ class TestCalculadora(unittest.TestCase):
         """Testa se a divisão por zero gera erro."""
         with self.assertRaises(ZeroDivisionError):
             dividir(10, 0)
+
+    def test_potencia(self):
+        """Testa se a função de potência está funcionando corretamente"""
+        self.assertEqual(potencia(2, 4), 16)
+        self.assertEqual(potencia(4, 3), 64)
+        self.assertEqual(potencia(5, 0), 1)
 
 
 if __name__ == "__main__":

@@ -4,7 +4,7 @@ Este repositório contém a atividade prática de introdução a testes automati
 
 ## Tecnologias Utilizadas
 
-* **Python 3.x**
+* **Python 3.12.3**
 * **Módulo nativo `unittest`**
 * **Visual Studio Code**
 
@@ -22,6 +22,7 @@ teste-unitario-python/
 Além das operações básicas fornecidas no roteiro inicial (Soma, Subtração, Multiplicação e Divisão), foram desenvolvidos:
 
 * **Função de Potenciação (potencia):** Operação que eleva uma base a um determinado expoente.
+* **Desafio Extra(calcular_meda):** Função que recebe uma lista de números, calcula a média aritmétca e trata o cenário de listas vazias lançando uma exceção.
 
 ## Como Executar os Testes
 
@@ -37,9 +38,9 @@ python -m unittest discover
 
 Exemplo de saída esperada
 ```text
-......
+........
 ----------------------------------------------------------------------
-Ran 6 tests in 0.001s
+Ran 8 tests in 0.001s
 
 OK
 ```

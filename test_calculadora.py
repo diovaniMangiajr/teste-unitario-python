@@ -3,7 +3,7 @@
 
 import unittest
 
-from calculadora import dividir, multiplicar, somar, subtrair, potencia
+from calculadora import dividir, multiplicar, somar, subtrair, potencia, calcular_media
 
 
 class TestCalculadora(unittest.TestCase):
@@ -40,9 +40,20 @@ class TestCalculadora(unittest.TestCase):
 
     def test_potencia(self):
         """Testa se a função de potência está funcionando corretamente"""
-        self.assertEqual(potencia(2, 4), 16)
-        self.assertEqual(potencia(4, 3), 64)
+        self.assertEqual(potencia(2, 3), 8)
+        self.assertEqual(potencia(10, 2), 100)
         self.assertEqual(potencia(5, 0), 1)
+    
+    def test_calcular_media(self):
+        """Testa se o cálculo da média com diferentes tipos de números"""
+        self.assertEqual(calcular_media([10, 8, 6]), 8)
+        self.assertEqual(calcular_media([5.5, 6.5, 9.0]), 7.0)
+        self.assertEqual(calcular_media([7]), 7)
+    
+    def test_calcular_media_lista_vazia(self):
+        """Teste para averiguar se ao passar uma lista vazia levanta um ValueError"""
+        with self.assertRaises(ValueError):
+            calcular_media([])
 
 
 if __name__ == "__main__":

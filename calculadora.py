@@ -24,3 +24,13 @@ def dividir(a, b):
 def potencia(a: float, b: float) -> float:
     """Retorna a potência de dos números."""
     return a**b
+
+def calcular_media(lista: list) -> float:
+    """Retorna a média de uma lista de números
+    Se a lista vier vazia levanta um ValueError
+    """
+
+    if not lista:
+        raise ValueError("A lista não pode estar vazia.")
+    
+    return sum(lista) / len(lista)
